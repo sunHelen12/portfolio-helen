@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <style>
+      .card.java {
+        --card-accent: var(--amber-soft);
+        --card-accent-strong: var(--amber);
+      }
+      .card.jsc {
+        --card-accent: var(--js-soft);
+        --card-accent-strong: var(--js-yellow);
+      }
+      .card.bootcamp {
+        --card-accent: var(--cyan-soft);
+        --card-accent-strong: var(--cyan);
+      }
+      .subtabs {
+        display: flex;
+        gap: 10px;
+        margin-top: 44px;
+        border-bottom: 1px solid var(--line-soft);
+      }
+      .subtab {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        padding: 12px 6px;
+        position: relative;
+        color: var(--text-dim);
+        cursor: pointer;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.25s;
+      }
+      .subtab .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+      .subtab[data-lang="java"] .dot {
+        background: var(--amber);
+      }
+      .subtab[data-lang="js"] .dot {
+        background: var(--js-yellow);
+      }
+      .subtab[data-lang="bootcamp"] .dot {
+        background: var(--cyan);
+      }
+      .subtab::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s var(--ease);
+      }
+      .subtab[data-lang="java"]::after {
+        background: var(--amber);
+      }
+      .subtab[data-lang="js"]::after {
+        background: var(--js-yellow);
+      }
+      .subtab[data-lang="bootcamp"]::after {
+        background: var(--cyan);
+      }
+      .subtab:hover {
+        color: var(--text);
+      }
+      .subtab.active {
+        color: var(--text);
+      }
+      .subtab.active::after {
+        transform: scaleX(1);
+      }
+      .subtab + .subtab {
+        margin-left: 8px;
+      }
+      .panel {
+        display: none;
+        padding-top: 44px;
+      }
+      .panel.active {
+        display: block;
+        animation: panel-in 0.5s var(--ease);
+      }
+      @keyframes panel-in {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/index.html" class="brandmark"
+        ><span class="dot"></span>HELEN SANTOS ROCHA</a
+      >
+      <ul>
+        <li><a href="../index.html" data-page="index.html">Início</a></li>
+        <li><a href="./dados.html" data-page="dados.html">Dados</a></li>
+        <li>
+          <a
+            href="./desenvolvimento.html"
+            data-page="desenvolvimento.html"
+            class="active"
+            >Desenvolvimento</a
+          >
+        </li>
+        <li><a href="../index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <div class="eyebrow">Desenvolvimento</div>
+      <h1
+        class="page-title"
+        style="font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 18ch"
+      >
+        Back-end &amp; Full-Stack
+      </h1>
+      <p
+        style="
+          margin-top: 20px;
+          max-width: 60ch;
+          color: var(--text-dim);
+          font-size: 1.05rem;
+        "
+      >
+        Desenvolvo aplicações back-end com Java e JavaScript, incluindo projetos
+        full-stack. Uma base sólida em algoritmos, estrutura de dados e visão
+        sistêmica.
+      </p>
+      <div class="subtabs">
+        <button class="subtab active" data-lang="java">
+          <span class="dot"></span>Java
+        </button>
+        <button class="subtab" data-lang="js">
+          <span class="dot"></span>JavaScript
+        </button>
+        <button class="subtab" data-lang="bootcamp">
+          <span class="dot"></span>Bootcamps Full-Stack
+        </button>
+      </div>
+    </header>
+
+    <section class="block" style="padding-top: 0">
+      <div class="panel active" id="panel-java">
+        <span class="tag amber">JAVA</span>
+        <div class="cards">
+          <div class="card java reveal">
+            <h3>ForumHub REST API</h3>
+            <div class="meta">Projeto Back-end • Java 17+ & Spring Boot</div>
+            <ul>
+              <li>
+                Desenvolvimento de uma API RESTful para um fórum de discussões,
+                estruturada com arquitetura MVC.
+              </li>
+              <li>
+                Implementação de segurança stateless utilizando Spring Security
+                e autenticação via tokens JWT.
+              </li>
+              <li>
+                Modelagem de banco de dados e persistência através do Spring
+                Data JPA, com versionamento via Flyway.
+              </li>
+              <li>
+                Documentação automatizada e interativa da API integrada com
+                SpringDoc OpenAPI (Swagger).
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Spring Boot</span>
+              <span class="chip">Spring Security</span>
+              <span class="chip">JWT</span>
+              <span class="chip">JPA</span>
+              <span class="chip">Flyway</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/forumhub"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+
+          <!-- Literalura -->
+          <div class="card java reveal">
+            <h3>Literalura - Catálogo Literário</h3>
+            <div class="meta">Projeto Back-end • Java 17+ & CLI</div>
+            <ul>
+              <li>
+                Aplicação de linha de comando (CLI) focada no consumo de API
+                externa de livros.
+              </li>
+              <li>
+                Implementação de requisições HTTP e desserialização de JSON
+                utilizando a biblioteca Jackson.
+              </li>
+              <li>
+                Mapeamento flexível de dados utilizando Java Records e anotações
+                @JsonAlias.
+              </li>
+              <li>
+                Persistência de dados em banco relacional via Spring Data JPA
+                com consultas JPQL.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Consumo de API</span>
+              <span class="chip">Jackson (JSON)</span>
+              <span class="chip">JPQL</span>
+              <span class="chip">Pipeline de Dados</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/literalura"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+
+          <!-- Tabela FIPE -->
+          <div class="card java reveal">
+            <h3>Tabela FIPE - Consulta Automotiva</h3>
+            <div class="meta">
+              Projeto Back-end • Java 17+ & Spring Boot CLI
+            </div>
+            <ul>
+              <li>
+                Desenvolvimento de aplicação de linha de comando para consumo da
+                API pública da Tabela FIPE.
+              </li>
+              <li>
+                Implementação de requisições HTTP e desserialização de respostas
+                JSON aninhadas.
+              </li>
+              <li>
+                Uso intensivo de Java Streams e Expressões Lambda para filtragem
+                e manipulação de dados.
+              </li>
+              <li>
+                Mapeamento estruturado utilizando Java Records para representar
+                veículos e modelos.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Consumo de API</span>
+              <span class="chip">Java Streams</span>
+              <span class="chip">Jackson (JSON)</span>
+              <span class="chip">Processamento de Dados</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/TabelaFipe"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+
+          <!-- CinesSys -->
+          <div class="card java reveal">
+            <h3>CineSys - Gestão de Cinema</h3>
+            <div class="meta">Projeto em Equipe • Java, JavaFX & MVC</div>
+            <ul>
+              <li>
+                Atuei como contribuidora no desenvolvimento de um sistema
+                desktop de gestão de cinema com JavaFX.
+              </li>
+              <li>
+                Arquitetura estruturada no padrão MVC, facilitando a divisão de
+                tarefas com a equipe.
+              </li>
+              <li>
+                Implementação de estruturas de dados na unha (Listas e Filas
+                Dinâmicas) para gerenciamento de sessões.
+              </li>
+              <li>
+                Colaboração no desenvolvimento de funcionalidades de venda e
+                histórico de compras.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">JavaFX</span>
+              <span class="chip">MVC</span>
+              <span class="chip">Estruturas de Dados</span>
+              <span class="chip">Trabalho em Equipe</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/kahiss/cinessys"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL JAVASCRIPT -->
+      <div class="panel" id="panel-js">
+        <span class="tag jsy">JAVASCRIPT</span>
+        <div class="cards">
+          <!-- LkCell -->
+          <div class="card jsc reveal">
+            <h3>LKCell - Gestão de Varejo de Celulares</h3>
+            <div class="meta">
+              Projeto Full-Stack em Equipe • Node.js, Next.js & Prisma
+            </div>
+            <ul>
+              <li>
+                Atuei como contribuidora no desenvolvimento full-stack de um ERP
+                completo para o varejo de eletrônicos.
+              </li>
+              <li>
+                <strong>Back-end:</strong> Construção de uma API robusta em
+                Node.js com Express, utilizando <strong>Prisma ORM</strong> para
+                gerenciamento de banco de dados relacional e versionamento com
+                migrations.
+              </li>
+              <li>
+                <strong>Gestão Estratégica:</strong> Implementação de fluxos
+                complexos como controle de estoque (entradas, saídas, histórico
+                e transferências), catálogo de produtos (com gestão de
+                compatibilidade) e gestão de compras e vendas.
+              </li>
+              <li>
+                <strong>Front-end:</strong> Desenvolvimento de interface moderna
+                e escalável com Next.js, com rotas dinâmicas, *hooks*
+                customizados para integração com a API e componentes modulares.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Node.js / Express</span>
+              <span class="chip">Next.js</span>
+              <span class="chip">Prisma ORM</span>
+              <span class="chip">Gestão de Estoque</span>
+              <span class="chip">Trabalho em Equipe</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/Projeto_de_Software_LkCell"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+
+          <!-- Pdvlopers -->
+          <div class="card jsc reveal">
+            <h3>PDVlopers - Sistema de Ponto de Venda</h3>
+            <div class="meta">
+              Projeto Full-Stack em Equipe • Node.js, React & Supabase
+            </div>
+            <ul>
+              <li>
+                Atuei como contribuidora em um projeto colaborativo para a
+                construção de um sistema de Ponto de Venda completo, integrando
+                back-end e front-end.
+              </li>
+              <li>
+                <strong>Back-end & BaaS:</strong> Desenvolvimento de
+                rotas/controllers em Node.js e integração ágil com o
+                <strong>Supabase</strong> para gerenciamento de banco de dados
+                (PostgreSQL) e serviços de backend.
+              </li>
+              <li>
+                <strong>Front-end:</strong> Criação de interfaces responsivas
+                com React, utilizando Vite para build rápido e CSS Modules para
+                encapsulamento de estilos.
+              </li>
+              <li>
+                <strong>Features:</strong> Implementação de histórico de
+                resgates, visão geral de pontos, formulários de promoção e
+                modais interativos para gestão financeira e de clientes.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Node.js</span>
+              <span class="chip">React</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Trabalho em Equipe</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/pdvlopers-projeto-final"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL BOOTCAMPS -->
+      <div class="panel" id="panel-bootcamp">
+        <span class="tag cyan">BOOTCAMPS & FULL-STACK</span>
+        <div class="cards">
+          <div class="card bootcamp reveal">
+            <h3>Bootcamp praTi - Full Stack Junior</h3>
+            <div class="meta">
+              Repositório de Estudos • React, Node.js, Java & SQL
+            </div>
+            <ul>
+              <li>
+                Repositório gigante documentando a evolução prática no
+                desenvolvimento Full-Stack, indo de algoritmos a aplicações
+                completas.
+              </li>
+              <li>
+                <strong>Consumo de API & React:</strong> Desenvolvimento do "Meu
+                App Filmes" com Vite, consumindo a API do TMDB para busca de
+                filmes, paginação e uso de hooks customizados (useLocalStorage)
+                para favoritar.
+              </li>
+              <li>
+                <strong>Arquitetura CSS:</strong> Aplicação prática de múltiplas
+                abordagens de estilização front-end, incluindo CSS Modules,
+                Tailwind e Styled Components na estruturação de lojas e
+                portfólios.
+              </li>
+              <li>
+                <strong>Java Orientado a Objetos:</strong> Dezenas de scripts
+                focados em herança, interfaces e polimorfismo, simulando regras
+                de negócio complexas (carrinho de compras, cálculo de fretes com
+                Sedex/PAC e sistemas de pagamento).
+              </li>
+              <li>
+                <strong>Lógica JS:</strong> Exercícios aprofundados abordando
+                estruturas de controle avançadas, recursividade e manipulação de
+                arrays e objetos complexos.
+              </li>
+              <li>
+                <strong>Banco de Dados:</strong> Modelagem e scripts SQL reais
+                para um sistema de cafeteria, cobrindo DML, DDL e consultas
+                analíticas de faturamento.
+              </li>
+            </ul>
+            <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+              <span class="chip">Consumo de API (TMDB)</span>
+              <span class="chip">React & Hooks</span>
+              <span class="chip">Java OO</span>
+              <span class="chip">Tailwind & Styled Components</span>
+              <span class="chip">SQL Analytics</span>
+            </div>
+            <a
+              class="repo"
+              href="https://github.com/sunHelen12/bootcamp_prati_desenvolvimento_full_stack_junior"
+              target="_blank"
+              rel="noopener"
+              >↗ ver repositório no GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contato">
+      <h2>Vamos conversar sobre dados, sistemas, ou as duas coisas.</h2>
+      <div class="contact-row">
+        <a class="btn" href="mailto:sunrise.developer12@gmail.com"
+          >sunrise.developer12@gmail.com</a
+        >        
+        <a
+          class="btn"
+          href="https://linkedin.com/in/helen-santos-dev"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        <a
+          class="btn"
+          href="https://github.com/sunHelen12"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+      document.querySelectorAll(".subtab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".subtab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".panel")
+            .forEach((p) => p.classList.remove("active"));
+
+          tab.classList.add("active");
+          document
+            .getElementById("panel-" + tab.dataset.lang)
+            .classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

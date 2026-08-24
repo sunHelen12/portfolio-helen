@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helen Santos Rocha — Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html" class="brandmark"
+        ><span class="dot"></span>HELEN SANTOS ROCHA</a
+      >
+      <ul>
+        <li><a href="./index.html" data-page="index.html">Início</a></li>
+        <li><a href="./pages/dados.html" data-page="dados.html">Dados</a></li>
+        <li>
+          <a
+            href="./pages/desenvolvimento.html"
+            data-page="desenvolvimento.html"
+            >Desenvolvimento</a
+          >
+        </li>
+        <li><a href="./index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <header class="home-hero">
+      <div class="hero-grid">
+        <div class="hero-photo-frame reveal">
+          <div class="hero-photo">
+            <img
+              src="./assets/foto-helen.jpg"
+              alt="Foto de Helen Santos Rocha"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <span style="display: none"
+              >Coloque aqui sua foto<br />(foto-helen.jpg)<br />— retrato, fundo
+              simples,<br />proporção 4:5</span
+            >
+          </div>
+        </div>
+        <div>
+          <h1 class="page-title">
+            Dados e sistemas, uma <span class="grad">linha de código</span> por
+            vez<span class="caret">|</span>
+          </h1>
+          <p class="sub">
+            Transito entre Engenharia de Dados e Full-Stack Development. Do lado
+            de dados, construo e orquestro pipelines completos na AWS, da
+            ingestão à camada refinada, pronta para análise. Do lado de
+            desenvolvimento, crio aplicações back-end e front-end com Java e
+            JavaScript, do banco de dados até a tela para o usuário. Estágio
+            concluído na Compass UOL, com certificação AWS Cloud Practitioner, e
+            sempre em busca de novos desafios para aprender e contribuir.
+          </p>
+          <div class="links">
+            <a class="btn" href="./pages/dados.html">Explorar Dados</a>
+            <a class="btn" href="./pages/desenvolvimento.html"
+              >Explorar Desenvolvimento</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="eyebrow-icon reveal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <rect
+            x="2"
+            y="4"
+            width="20"
+            height="13"
+            rx="2"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+          <path
+            d="M8 21H16M12 17V21"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+          />
+        </svg>
+        Graduanda em Sistemas de Informação
+      </div>
+
+      <h2 class="portals-title reveal">Projetos</h2>
+
+      <div class="portals">
+        <a id="p-dados" class="portal reveal" href="./pages/dados.html">
+          <div class="idx mono">DADOS</div>
+          <h2>Engenharia de Dados</h2>
+          <p>
+            Pipelines na AWS Glue, Lambda, Athena. Do dado bruto à camada
+            refinada, pronta para análise.
+          </p>
+          <span class="go"
+            >ver seção
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path
+                d="M1 5H15M15 5L10.5 1M15 5L10.5 9"
+                stroke="currentColor"
+                stroke-width="1.4"
+              /></svg
+          ></span>
+        </a>
+        <a id="p-dev" class="portal reveal" href="./pages/desenvolvimento.html">
+          <div class="idx mono">DESENVOLVIMENTO</div>
+          <h2>Back-end & Full-Stack</h2>
+          <p>
+            Aplicações com Java e JavaScript. Da lógica de negócio à integração
+            com o front-end.
+          </p>
+          <span class="go"
+            >ver seção
+            <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path
+                d="M1 5H15M15 5L10.5 1M15 5L10.5 9"
+                stroke="currentColor"
+                stroke-width="1.4"
+              /></svg
+          ></span>
+        </a>
+      </div>
+    </header>
+
+    <footer id="contato">
+      <h2>Vamos conversar sobre dados, sistemas, ou as duas coisas.</h2>
+      <div class="contact-row">
+        <a class="btn" href="mailto:sunrise.developer12@gmail.com"
+          >sunrise.developer12@gmail.com</a
+        >
+        <a
+          class="btn"
+          href="https://linkedin.com/in/helen-santos-dev"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        <a
+          class="btn"
+          href="https://github.com/sunHelen12"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

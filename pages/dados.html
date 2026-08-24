@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .card.data {
+        --card-accent: var(--cyan-soft);
+        --card-accent-strong: var(--cyan);
+      }
+      .flow {
+        margin-top: 56px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        align-items: center;
+      }
+      .flow .node {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--cyan);
+        background: var(--cyan-soft);
+        border: 1px solid var(--line);
+        padding: 9px 16px;
+        border-radius: 8px;
+      }
+      .flow .arrow {
+        color: var(--text-faint);
+        padding: 0 12px;
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html" class="brandmark"
+        ><span class="dot"></span>HELEN SANTOS ROCHA</a
+      >
+      <ul>
+        <li><a href="../index.html" data-page="index.html">Início</a></li>
+        <li>
+          <a href="./dados.html" data-page="dados.html" class="active">Dados</a>
+        </li>
+        <li>
+          <a href="./desenvolvimento.html" data-page="desenvolvimento.html"
+            >Desenvolvimento</a
+          >
+        </li>
+        <li><a href="../index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <div class="eyebrow">Dados</div>
+      <h1
+        class="page-title"
+        style="font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 16ch"
+      >
+        Engenharia de Dados
+      </h1>
+      <p
+        style="
+          margin-top: 20px;
+          max-width: 60ch;
+          color: var(--text-dim);
+          font-size: 1.05rem;
+        "
+      >
+        Construo pipelines de dados na nuvem, da ingestão bruta até a camada
+        refinada, pronta para consulta analítica. Foco em AWS, processamento
+        distribuído e modelagem dimensional.
+      </p>
+      <div class="flow reveal">
+        <span class="node">RAW</span><span class="arrow">→</span>
+        <span class="node">TRUSTED</span><span class="arrow">→</span>
+        <span class="node">REFINED</span><span class="arrow">→</span>
+        <span class="node">AWS GLUE / ATHENA / QUICKSIGHT</span>
+      </div>
+    </header>
+
+    <section class="block" style="padding-top: 32px">
+      <span class="tag cyan">PYTHON</span>
+      <div class="cards">
+        <div class="card data reveal">
+          <h3>Modelagem Dimensional & SQL Analytics</h3>
+          <div class="meta">Estágio — AI/R Compass UOL</div>
+          <ul>
+            <li>
+              Normalização de banco de dados transacional, eliminando
+              redundâncias através da criação de tabelas de domínio (ex:
+              combustíveis, clientes, vendedores, carros).
+            </li>
+            <li>
+              Implementação de pipeline ETL puramente em SQL: extração via
+              SELECT DISTINCT, tratamento de dados (funções REPLACE e SUBSTR) e
+              carga em nova estrutura.
+            </li>
+            <li>
+              Modelagem dimensional (Star Schema) via criação de VIEWs
+              analíticas (dim_clientes, dim_tempo, fato_locacoes).
+            </li>
+            <li>
+              Construção de dimensões de tempo ricas para análise de
+              sazonalidade e cálculo embutido de faturamento total.
+            </li>
+          </ul>
+          <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+            <span class="chip">SQL Avançado</span>
+            <span class="chip">Modelagem Dimensional</span>
+            <span class="chip">Star Schema</span>
+            <span class="chip">ETL</span>
+          </div>
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%201/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub</a
+          >
+        </div>
+
+        <div class="card data reveal">
+          <h3>Análise Exploratória de Dados (EDA)</h3>
+          <div class="meta">Estágio — AI/R Compass UOL</div>
+          <ul>
+            <li>
+              Tratamento e limpeza de um dataset de ~10k registros da Google
+              Play Store utilizando Pandas.
+            </li>
+            <li>
+              Remoção de duplicatas, tratamento de dados faltantes/deslocados e
+              conversão de strings para dados numéricos.
+            </li>
+            <li>
+              Desenvolvimento de visualizações de dados (DataViz) utilizando
+              Matplotlib para extração de insights de negócios.
+            </li>
+            <li>
+              Análises geradas: top aplicativos por instalações, médias de
+              avaliação por categoria e distribuição de aplicativos gratuitos
+              vs. pagos.
+            </li>
+          </ul>
+          <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+            <span class="chip">Python</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">DataViz</span>
+            <span class="chip">Data Cleaning</span>
+          </div>
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%202/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub</a
+          >
+        </div>
+        <div class="card data reveal">
+          <h3>Pipeline ETL & Análise com Docker</h3>
+          <div class="meta">Estágio — AI/R Compass UOL</div>
+          <ul>
+            <li>
+              Desenvolvimento de um pipeline ETL em Python para processar dados
+              de faturamento de turnês musicais.
+            </li>
+            <li>
+              Limpeza de dados com Pandas, envolvendo Regex para remoção de
+              caracteres especiais e formatação monetária.
+            </li>
+            <li>
+              Orquestração de múltiplos containers (ETL e Análise) utilizando
+              Docker Compose, com dependência de execução sequencial.
+            </li>
+            <li>
+              Geração automatizada de relatórios em texto e gráficos com
+              Matplotlib (backend Agg) através de volumes compartilhados (.env).
+            </li>
+          </ul>
+          <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+            <span class="chip">Docker Compose</span>
+            <span class="chip">Python</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">ETL</span>
+          </div>
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%203/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub</a
+          >
+        </div>
+        <div class="card data reveal">
+          <h3>Automação ETL & Cloud Storage (AWS S3)</h3>
+          <div class="meta">Estágio — AI/R Compass UOL</div>
+          <ul>
+            <li>
+              Desenvolvimento de pipeline ETL com Python e Pandas para tratar
+              dados do acervo da Fundação Biblioteca Nacional.
+            </li>
+            <li>
+              Integração com a infraestrutura da AWS utilizando Boto3, operando
+              fluxos de leitura e upload de arquivos (.csv e .png) diretamente
+              em buffers de memória (io.BytesIO).
+            </li>
+            <li>
+              Gerenciamento seguro de credenciais na nuvem aplicando a
+              biblioteca python-dotenv e validação contínua através de scripts
+              de teste.
+            </li>
+            <li>
+              Análise exploratória e DataViz com Matplotlib e Seaborn, avaliando
+              sazonalidades e proporções de aquisição do acervo com salvamento
+              automatizado nos buckets.
+            </li>
+          </ul>
+          <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+            <span class="chip">AWS S3</span>
+            <span class="chip">Boto3</span>
+            <span class="chip">Python</span>
+            <span class="chip">Seaborn</span>
+            <span class="chip">Segurança Cloud</span>
+          </div>
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%204/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub</a
+          >
+        </div>
+        <!-- Novo card adicionado: Data Lake de Filmes (TMDB) -->
+        <div class="card data reveal">
+          <h3>Data Lake & Analytics de Cinema</h3>
+          <div class="meta">Estágio — AI/R Compass UOL</div>
+          <p
+            style="
+              font-size: 0.9em;
+              font-style: italic;
+              margin-bottom: 15px;
+              color: #57e8ce;
+            "
+          >
+            Obs: Este megaprojeto foi construído em múltiplas etapas, cobrindo o
+            ciclo de vida completo do dado: Ingestão (Raw), Processamento
+            (Trusted), Modelagem (Refined) e Consumo (Dataviz).
+          </p>
+          <ul>
+            <li>
+              <strong>Ingestão (Raw):</strong> Desenvolvimento de pipeline
+              automatizado integrando dados de CSVs e da API do TMDB via Python
+              e AWS Lambda, salvos de forma estruturada na AWS S3.
+            </li>
+            <li>
+              <strong>Processamento (Trusted):</strong> Tratamento de valores
+              ausentes e tipagem de dados. "Achatamento" (flatten) de estruturas
+              JSON aninhadas utilizando a função <code>explode</code> via
+              PySpark no AWS Glue.
+            </li>
+            <li>
+              <strong>Modelagem Dimensional (Refined):</strong> Estruturação de
+              dados com <em>Fact Constellation Schema</em>, envolvendo tabelas
+              <em>factless</em> (fato_participacao) e resolução de relações N:N
+              com tabelas ponte.
+            </li>
+            <li>
+              <strong>Modelagem Analítica no Athena:</strong> Criação de uma
+              View avançada (<code>vw_filmes_analise</code>) no AWS Athena,
+              unificando 5 dimensões e 2 tabelas fato para centralizar métricas
+              complexas e fornecer uma "fonte única da verdade".
+            </li>
+            <li>
+              <strong>DataViz & Storytelling:</strong> Construção de dashboards
+              imersivos no Amazon QuickSight consumindo a View do Athena,
+              adotando storytelling visual com paleta de cores inspirada em
+              ícones do terror (Freddy Krueger).
+            </li>
+          </ul>
+          <div class="chips" style="margin-top: 20px; margin-bottom: 20px">
+            <span class="chip">AWS Glue</span>
+            <span class="chip">PySpark</span>
+            <span class="chip">Amazon Athena</span>
+            <span class="chip">AWS Lambda</span>
+            <span class="chip">Amazon QuickSight</span>
+            <span class="chip">Fact Constellation</span>
+          </div>
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%205/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub (parte 1)</a
+          >
+          <br />
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%206/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub (parte 2)</a
+          >
+          <br />
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%207/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub (parte 3)</a
+          >
+          <br />
+          <a
+            class="repo"
+            href="https://github.com/sunHelen12/AWS-Cloud-Data-Engineering-Compass-UOL/tree/main/Sprint%208/Desafio"
+            target="_blank"
+            rel="noopener"
+            >→ ver repositório no GitHub (parte 4)</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="contato">
+      <h2>Vamos conversar sobre dados, sistemas, ou as duas coisas.</h2>
+      <div class="contact-row">
+        <a class="btn" href="mailto:sunrise.developer12@gmail.com"
+          >sunrise.developer12@gmail.com</a
+        >        
+        <a
+          class="btn"
+          href="https://linkedin.com/in/helen-santos-dev"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        <a
+          class="btn"
+          href="https://github.com/sunHelen12"
+          target="_blank"
+          rel="noopener"
+          >GitHub</a
+        >
+      </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>
